@@ -1,0 +1,22 @@
+syntax = "proto3";
+package protofiles;
+
+message Person{
+    string Name = 1;
+    int32 Id = 2;
+    string Email = 3;
+    enum PhoneType {
+        Mobile = 0;
+        Work = 1;
+        Home= 2;
+    }
+    message PhoneNumber{
+        string Phone = 1;
+        PhoneType Type = 2;
+    }
+    repeated PhoneNumber Phones = 4;
+}
+
+message AddressBook {
+    repeated Person people = 1;
+}
